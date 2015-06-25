@@ -1,0 +1,10 @@
+<h2>Kleiberweb <small id="subtitle">Web album.</small></h2>
+
+<div id="folderGallery">
+  <% @dirs.each do |dir| %>
+    <a href="dir/<%= dir[:id] %>"> 
+      <img alt="<%= dir[:name] %>" src="<%= dir[:first_image] %>">
+    </a>
+  <% end %>
+</div>
+

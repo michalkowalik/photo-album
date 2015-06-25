@@ -1,0 +1,18 @@
+<!-- breadcrumb here! -->
+<div class="row">
+  <div class="col-md-6">
+    <h2 id="title">Kleiberweb <small><%= @folder.name %></small></h2>
+  </div>
+  <div class="col-md-4 col-md-offset-2">
+    <p></p> <!-- - any better way to do it?  -->
+    <div>
+      <button id="btn_first" class="btn btn-default">&lt;&lt;</button>
+      <button id="btn_prev" class="btn btn-default">&lt;</button>
+      <button id="btn_counter" class="btn btn-warning">1/1</button>
+      <button id="btn_next" class="btn btn-default">&gt;</button>
+      <button id="btn_last" class="btn btn-default">&gt;&gt;</button>
+    </div>
+  </div>
+</div>
+<div id="dirGallery" data-folderid="<%= @folder.id %>" data-foldername="<%=@folder.name%>">
+</div>

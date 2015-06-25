@@ -1,0 +1,48 @@
+<div>
+  <h2><%= @folder_name %></h2><h3> content: </h3>
+</div>
+<div id="folders_table">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>ID</th><th>Name</th><th> Size </th><th>Has thumbnail</th><th> indexed? </th><th>Description</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <% @files_fs.each do |file| %>
+    <tr>
+      <td><strong> <%= file[:id] %></strong></td>
+      <td>
+        <div id="id_<%= file[:id] %>" 
+             class="pop-div"
+             title="<p>Preview</p>"
+             data-trigger="hover"
+             data-content='<img src="http://<%= ENV['IMG_SERVER']%>/<%= @folder_name%>/thumbs/<%= file[:name] %>"/>'> 
+          <%= file[:name] %>
+        </div>
+      </td>
+      <td><%= file[:size] %> </td>
+      <td><%= file[:thumb] %> </td>
+      <td> <%= file[:indexed] %> </td>
+      <td> <a class="btn btn-sm" id="descr-btn-<%= file[:name]%>"
+              role="button"
+              href="/admin/img/<%= file[:id]%>">Edit</a></td>
+      <td>
+        <form class="form-inline" action="/admin/resize" method="post">
+          <div id="actions-form-<%= file[:name]%>" class="form-group">
+            <input type="hidden" name="folder_name" value="<%= @folder_name %>">
+            <input type="hidden" name="img_name" value="<%= file[:name] %>">
+            <select class="form-control input-sm" name="img_action">
+              <option id="img_resize" value="resize"> Resize </option>
+              <option id="img_index" value="index"> Index </option>
+              <option id="img_delete" value="delete"> Delete </option>
+              <option id="img_edit" value="edit"> Edit </option>
+            </select>
+            <button type="submit" class="btn btn-primary btn-sm" id="go-btn-<%= file[:name]%>">Go!</button>
+          </div>
+        </form>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

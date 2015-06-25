@@ -1,0 +1,22 @@
+<h1>Folders</h1>
+<div id="folders_table">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>ID</th><th>Name</th><th>Files / indexed </th><th>Action</th><th>&nbsp;</th>
+    </tr>
+    </thead>
+    <% @folders.each do |folder| %>
+    <tr data-foldername="<%= folder[:name] %>">
+      <td><strong><%= folder[:id] %> &nbsp;</strong></td>
+      <td><a href="/admin/folder/<%= folder[:id]%>"><%= folder[:name] %> </td>
+      <td> <%= folder[:fs_count] %> / <%= folder[:count] %> </td>
+      <td> <button class="btn btn-primary btn-sm btn-reindex-single">Reindex</button> </td>
+      <td> <button class="btn btn-danger btn-sm">Delete</button> </td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+<div id="reindex-div">
+  <button type="button "class="btn btn-primary" id="reindex-btn"> Reindex! </button>
+</div>

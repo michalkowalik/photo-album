@@ -1,0 +1,38 @@
+<div>
+  <h2><%= @image.name %></h2><h3> details: </h3>
+</div>
+<form action="/admin/img/update/<%=@image.id%>" method="post">
+  <div id="img_table">
+    <table class="table table-striped">
+      <tr>
+        <td>Name</td>
+        <td><%= @image.name%></td>
+      </tr>
+      <tr>
+        <td>Thumbnail</td>
+        <td><img src="http://<%= ENV['IMG_SERVER']%>/<%= @folder_name%>/thumbs/<%= @image.name%>"/></td>
+      </tr>
+      <tr>
+        <td>Description</td>
+        <td><textarea class="form-control" rows="3" id="img-dscr" name="descr">
+          <%= @image.description %></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td>Date</td>
+        <td><input type="text" class="form-control" id="date-time" name="date-time"
+                   placeholder="<%= @image.exif.date_time%>">
+        </td>
+      </tr>
+      <tr>
+        <td>Use as folder cover</td>
+        <td><input type="checkbox" name="cover-image"></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td><button type="submit" class="btn btn-primary btn-small" id="img-update-btn">Update</button></td>
+      </tr>
+    </table>
+
+    
+</form>

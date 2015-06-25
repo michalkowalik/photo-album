@@ -1,0 +1,18 @@
+%div{:class => "black col-xs-12 col-sm-6 col-md-9"}
+  %div{:class => "foo"}
+    %div{:class => "slide_nav", :id => "arrow_left"}
+      %a{:id=>"rev_nav", :href=>"#"} 
+        %span{:class => "glyphicon glyphicon-chevron-left"}
+    %div{:class => "slide_nav", :id => "arrow_right"}
+      %a{:id=>"ffd_nav", :href=>"#"}
+        %span{:class => "glyphicon glyphicon-chevron-right"}
+    %img{:src => @img["url"], :alt => @img["name"], :class => "img-responsive center-block", :id=> "img_col"}
+
+%div{:class => "col-xs-6 col-md-3 grey", :id=> "side_col"}
+  %div{:id => "slide_info"}
+    %h2{:id => "img_counter"}
+  %div
+    %p
+  %div{:id => "footer", :class => "slide-footer"}
+    Kleiberweb WebAlbum.
+    (C)2015 Michał Kowalik

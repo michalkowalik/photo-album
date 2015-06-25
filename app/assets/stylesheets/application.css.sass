@@ -1,0 +1,112 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+@import "bootstrap-sprockets"
+@import "bootstrap"
+
+body 
+    margin: 0
+    background: #D9D9D9
+    color: #6f5a40
+    font-size: 14px
+    line-height: 20px
+    display: block
+
+.header 
+    border-bottom: 1px solid #e5e5e5
+    color: #a1c1cc
+    text-color: #a1c1cc
+    
+h3 
+    margin-top: 0
+    margin-bottom: 0
+    line-height: 40px
+    padding-bottom: 19px
+
+.navbar-inverse 
+    padding: 0
+    border-radius: 0
+    border: 0px
+    border-color: #ffffff
+    background-color: #444444
+
+.nav 
+    margin-bottom: 0
+    overflow: visible
+    border-radius: 0
+    border: 0px
+    border-color: #ffffff
+    color: #fff
+    display: block
+    float: right
+    position: relative
+    padding: 0
+    border-radius: 0
+
+.breadcrumb
+    margin: 7px 7px
+    border: 0px
+    border-color: #ffffff
+    background-color: #444444
+    a
+        color: white
+
+.navbar
+    margin-bottom: 0
+    overflow: visible
+    border-radius: 0
+    border-color: #ffffff
+    color: #fff
+    navbar-height: 40px
+    navbar-max-height: 40px
+
+.vertical-center 
+    min-height: 100%
+    min-height: 100vh
+    display: flex
+    align-items: center
+
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) 
+    .container 
+        max-width: 930px
+        background-color: #efefef
+        margin-bottom: 0px
+    
+
+    /* Remove the padding we set earlier */
+    .header,
+    .marketing,
+    .footer 
+        padding-left: 0
+        padding-right: 0
+
+    /* Space out the masthead */
+    .header 
+        margin-bottom: 30px
+    
+    /* Remove the bottom border on the jumbotron for visual effect */
+    .jumbotron 
+        border-bottom: 0
+        /**/
+        background: #C0C9CC
+
+    .breadcrumb
+        float: left
+        margin 7px 10px
+
+    .cust-bread
+        float: left
+        margin 7px 10px
